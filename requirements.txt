@@ -1,0 +1,10 @@
+selenium==3.14
+requests
+falcon
+pandas
+csv
+bs4
+falcon
+falcon_cors
+csv
+waitress
