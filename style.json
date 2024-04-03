@@ -1,0 +1,57 @@
+{
+        "version": 8,
+        "sources": {
+            // "carto-dark": {
+            //     "type": "raster",
+            //     "tiles": [
+            //         "http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+            //         "http://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+            //         "http://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+            //         "http://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+            //     ]
+            // },
+            // "postgis-tiles": {
+            //     "type": "geojson",
+            //     "data": "http://localhost:8001/confirmed/12/2878/1640.json"
+            // }
+            "pop_density": {
+                "type": "vector",
+                "tiles": [
+                    "https://planetarycomputer.microsoft.com/api/data/v1/vector/collections/ms-buildings/tilesets/global-footprints/tiles/{z}/{x}/{y}"
+                    ],
+                "minzoom":0,
+                "maxzoom":13
+
+            }
+            // "confirmed": {
+            //     "type": "vector",
+            //     "tiles": [
+            //         "http://support.tplmaps.com/ncoc_tiles/confirmed/{z}/{x}/{y}.pbf"
+            //         ],
+            //     "minzoom":1,
+            //     "maxzoom":8
+            // }
+
+        },
+        "glyphs":"{fontstack}/{range}.pbf",
+        "layers": [
+        //     {
+        //     "id": "carto-dark-layer",
+        //     "type": "raster",
+        //     "source": "carto-dark",
+        //     "minzoom": 0,
+        //     "maxzoom": 22
+        // },
+        {
+            "id": "pop_density-layer",
+            "type": "fill",
+            "source": "pop_density",
+            "source-layer": "bingmlbuildings", 
+            "minzoom": 0,
+            "maxzoom": 13,
+            "paint": {
+                "fill-color": "#088",
+                "fill-opacity": 0.8
+            }
+        }]
+    }
